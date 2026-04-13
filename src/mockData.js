@@ -9,16 +9,16 @@ export const MOCK_DATA = {
 };
 
 export const SNOWMAN_IMAGES = {
-  0: "https://ricardoquiroz.github.io/snowman/images/Snowman0.png",
-  1: "https://ricardoquiroz.github.io/snowman/images/Snowman1.png",
-  2: "https://ricardoquiroz.github.io/snowman/images/Snowman2.png",
-  3: "https://ricardoquiroz.github.io/snowman/images/Snowman3.png",
-  4: "https://ricardoquiroz.github.io/snowman/images/Snowman4.png",
-  5: "https://ricardoquiroz.github.io/snowman/images/Snowman5.png",
-  6: "https://ricardoquiroz.github.io/snowman/images/Snowman6.png",
-  7: "https://ricardoquiroz.github.io/snowman/images/Snowman7.png",
-  WIN: "https://ricardoquiroz.github.io/snowman/images/SnowmanW.png",
-  LOSE: "https://ricardoquiroz.github.io/snowman/images/SnowmanL.png"
+  0: "./images/Snowman0.png",
+  1: "./images/Snowman1.png",
+  2: "./images/Snowman2.png",
+  3: "./images/Snowman3.png",
+  4: "./images/Snowman4.png",
+  5: "./images/Snowman5.png",
+  6: "./images/Snowman6.png",
+  7: "./images/Snowman7.png",
+  WIN: "./images/SnowmanW.png",
+  LOSE: "./images/SnowmanL.png"
 };
 
 export const KEYBOARD_ROWS = [
