@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+:root {
+  --bg-gradient: #ffffff; /* Fondo blanco pedido */
+  --glass-bg: rgba(0, 0, 0, 0.05); /* Cristal oscuro sutil */
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --text-main: #1a2a6c; /* Azul oscuro para lectura */
+  --text-muted: #5f6368;
+  --accent: #007bff; /* Azul vibrante */
+  --danger: #d90429;
+  --key-bg: rgba(0, 0, 0, 0.06);
+  --key-hover: rgba(0, 0, 0, 0.12);
+  --input-bg: #f8f9fa;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Fredoka', sans-serif;
+  user-select: none;
+}
+
+body {
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+  max-width: 500px;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glassmorphism Containers */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 24px;
+  padding: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Headers */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.theme-title {
+  background: rgba(0,0,0,0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: inline-block;
+  color: var(--accent);
+}
+
+/* Login Screen */
+.login-input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid var(--glass-border);
+  background: rgba(0,0,0,0.03); 
+  color: var(--text-main);
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 20px 0;
+  outline: none;
+  font-family: monospace;
+  letter-spacing: 3px;
+}
+
+.login-input::placeholder {
+  color: rgba(0,0,0,0.3);
+  letter-spacing: normal;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.btn {
+  background: var(--accent);
+  color: #1a2a6c;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: 100%;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn:disabled {
+  background: gray;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Game Area */
+.game-area {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+
+.snowman-img {
+  width: 375px; 
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.question-text {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Word Box */
+.word-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.letter-box {
+  width: 40px;
+  height: 50px;
+  border-bottom: 4px solid var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+.letter-box.space {
+  border-bottom: none;
+  width: 20px;
+}
+
+/* Virtual Keyboard */
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.key {
+  background: var(--key-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 12px 0;
+  flex: 1;
+  max-width: 45px;
+  cursor: pointer;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+
+.key:active {
+  background: var(--key-hover);
+  transform: scale(0.9);
+}
+
+.key.correct {
+  background: rgba(44, 182, 125, 0.8);
+  border-color: #2cb67d;
+}
+
+/* Input Container para letras */
+.letter-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.char-input {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--text-main);
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--input-bg);
+  color: var(--text-main);
+  outline: none;
+}
+
+.btn-check {
+  width: 60px;
+  height: 60px;
+  background: var(--text-main);
+  color: white;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyboard {
+    display: none; /* Ocultamos el teclado virtual */
+}
+
+/* Top Stats */
+.game-stats {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Loader */
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid var(--accent);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 50px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
